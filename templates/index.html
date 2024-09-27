@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Word Counter</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Word Counter App</h1>
+        <form action="/count" method="POST">
+            <textarea name="paragraph" id="paragraph" placeholder="Type or paste your text here..." required></textarea>
+            <div class="buttons">
+                <button type="button" onclick="getWords()">count</button>
+                <button type="button" onclick="clearPar()">clear</button>
+            </div> 
+        </form>
+        {% if word_count is not none and char_count is not none %}
+        <p id="wordCount">Word count: 0 | Character Count: 0</p>
+        {% endif %}
+    </div>
+
+
+    <script src="/static/js/index.js"></script>
+</body>
+
+</html>
